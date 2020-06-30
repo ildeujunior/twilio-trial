@@ -22,9 +22,10 @@ app.get('/', (req, res) => {
 })
 
 app.post('/webhook', (req, res) => {
-    const msg = req.body.Body;
-    const twiml = new MessagingResponse();
-    twiml.message(`Obrigado por enviar a mensagem ${msg}`);
+    const msg = req.body.Body
+    const twiml = new MessagingResponse()
+    twiml.message(`Obrigado por enviar a mensagem ${msg}`)
+    console.log(twiml.toString())
     res.send(twiml.toString())
 })
 
